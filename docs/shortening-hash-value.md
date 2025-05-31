@@ -50,6 +50,17 @@ Thus, the short URL is https://localhost:8000/2TX
 | Collision is possible and must be resolved                                                    |                                         Collision is impossible because ID is unique                                         |
 | It is impossible to figure out the next available short URL because it does not depend on ID. | It is easy to figure out the next available short URL if ID increments by 1 for a new entry. This can be a security concern. |
 
+#### 3. Random String Generation
+Generate a random alphanumeric string of fixed length (e.g., 6–8 characters), check for uniqueness in the database.
+
+#### 4. Salted Hash of URL
+Hash the long URL along with a secret key or salt to avoid predictable outputs.
+
+Example:
+```
+hashlib.sha256((url + secret_key).encode()).hexdigest()[:7]
+```
+
 ### Deep dive
 
 Assume base 62 conversion is used in our design.
