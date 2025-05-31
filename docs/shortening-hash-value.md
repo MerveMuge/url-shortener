@@ -1,32 +1,11 @@
-![Alt text](Screenshot 2025-05-29 at 19.05.01.png)
 
 ## Hash function
 Hash function is used to hash a long URL to a short URL, also known as hashValue.
 
-### Hash value length
-The hashValue consists of characters from [0-9, a-z, A-Z], containing 10 + 26 + 26 = 62
-possible characters.
-
-| N |           Maximal number of URLs            | 
-|:--|:-------------------------------------------:| 
-| 1 |                 62 ^ 1 = 62                 | 
-| 2 |                62 ^ 2 = 3844                |
-| 3 |              62 ^ 3 = 238,328               | 
-| 4 |             62 ^ 4 = 14,776,336             |
-| 5 |            62 ^ 5 = 916,132,832             | 
-| 6 |           62 ^ 6 = 56,800,235,584           |
-| 7 | 62 ^ 7 = 3,521,614,606,208 = ~ 3.5 trillion |
-
-Number of Possible Combinations
-
-6 -> 62⁶ = 56.8 billion
-
-7 -> 62⁷ = 3.5 trillion
-
-it’s a huge difference, especially if you're planning for scale or want to avoid handling collisions frequently.
+![Alt text](Screenshot 2025-05-29 at 19.05.01.png)
 
 ### Hash Function types:
-1. Hash + collision resolution 
+#### 1. Hash + collision resolution 
 
 To shorten a long URL, we should implement a hash function that hashes a long URL to a 7-
 character string. A straightforward solution is to use well-known hash functions like CRC32,
@@ -48,7 +27,7 @@ To resolve hash collisions, we can recursively append a new predefined string un
 
 This method can eliminate collsion; however,it is expensive to query the database to check if a shortURL exists for every request.
 
-2. Base 62 conversion
+#### 2. Base 62 conversion
 
 Base conversion helps to convert the same number between its different number representation systems. Base
 62 conversion is used as there are 62 possible characters for hashValue.
