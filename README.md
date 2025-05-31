@@ -6,6 +6,11 @@
    python3.13 -m uvicorn src.main:app --reload
 ```
 
+## How to run test cases
+```bash
+  python3 -m pytest
+```
+
 ## API Endpoints
 API endpoints facilitate the communication between clients and servers.
 A URL shortener primary needs two API endpoints.
