@@ -2,7 +2,7 @@
 
 When building a URL shortener, redirect status codes determine how users and browsers are routed from the short URL to the original long URL.
 
-![Alt text](images/Screenshot 2025-05-29 at 18.40.36.png)
+![Alt text](images/Screenshot2025-05-29at18.40.36.png)
 
 ### 301 Redirect (Moved Permanently)
 A 301 redirect tells the browser that the short URL has permanently moved to a new location.
