@@ -2,7 +2,7 @@
 ## Hash function
 Hash function is used to hash a long URL to a short URL, also known as hashValue.
 
-![Alt text](Screenshot 2025-05-29 at 19.05.01.png)
+![Alt text](images/Screenshot 2025-05-29 at 19.05.01.png)
 
 ### Hash Function types:
 #### 1. Hash + collision resolution 
@@ -23,7 +23,7 @@ How can we make it shorter?
 The first approach is to collect the first 7 characters of a hash value; however, this method can lead to hash collisions.
 To resolve hash collisions, we can recursively append a new predefined string until no more collsion is discovered.
 
-![Alt text](Screenshot 2025-05-31 at 21.32.42.png)
+![Alt text](images/Screenshot 2025-05-31 at 21.32.42.png)
 
 This method can eliminate collsion; however,it is expensive to query the database to check if a shortURL exists for every request.
 
@@ -37,7 +37,7 @@ example: (1115710 represents 11157 in a base 10 system)
 • From its name, base 62 is a way of using 62 characters for encoding. The mappings are:
 0-0, ..., 9-9, 10-a, 11-b, ..., 35-z, 36-A, ..., 61-Z, where ‘a’ stands for 10, ‘Z’ stands for 61, etc.
 
-![Alt text](Screenshot 2025-05-31 at 21.40.12.png)
+![Alt text](images/Screenshot 2025-05-31 at 21.40.12.png)
 
 • 1115710 = 2 x 62^2 + 55 x 62^1 + 59 x 62^0 = [2, 55, 59] -> [2, T, X] in base 62
 
@@ -65,9 +65,9 @@ hashlib.sha256((url + secret_key).encode()).hexdigest()[:7]
 
 Assume base 62 conversion is used in our design.
 
-![Alt text](Screenshot 2025-05-31 at 21.52.56.png)
+![Alt text](images/Screenshot 2025-05-31 at 21.52.56.png)
 
-![Alt text](Screenshot 2025-05-31 at 21.59.54.png)
+![Alt text](images/Screenshot 2025-05-31 at 21.59.54.png)
 
 1. A user clicks a short URL link.
 2. The load balancer forwards the request to web servers.
